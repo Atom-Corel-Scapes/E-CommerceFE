@@ -1,12 +1,7 @@
 import React from 'react'
-
 import {useDispatch } from "react-redux";
-
+import { newUser } from '../../Redux/SignupSlice';
 import './signup.css'
-
-import '../img/user.png'
-
-import { newUser } from '../Redux/SignupSlice.js';
 
 function Signup() {
 
@@ -30,7 +25,7 @@ function Signup() {
         <input type="text" placeholder='username' className='username'></input>
         <input type="email" placeholder='e-mail' className='email'></input>
         <input type="password" placeholder='password' className='password'></input>
-        <button class="btn">Signup</button>
+        <button className="btn">Signup</button>
         {/* <span>{error}</span> */}
     </form>
     

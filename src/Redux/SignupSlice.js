@@ -7,7 +7,9 @@ export const newUser = createAsyncThunk('Users', async () => {
             body: JSON.stringify({
                 "userName":"vetri",
                 "userEmail":"kavin@gmail.com",
-                "userPassword":"12345"
+                "userPassword":"12345",
+                "userImage":"https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?cs=srgb&dl=pexels-pixabay-36717.jpg&fm=jpg",
+                "userAdminStatus":"true"
             })
         }).then((res)=> {
             return res.json();
