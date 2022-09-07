@@ -1,31 +1,38 @@
-// import  { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-// import userAPI from '../server/Routes/routes'
+import  { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 
-// // const URL = 'http://localhost:5000/';
 
-// const fetchUserById = createAsyncThunk(
-//     'users/fetchByIdLogin',
-//     async ( {userName: String ,userPassword: Number}, thunkAPI ) => {
-//       const response = await userAPI.fetchById(userId)
-//       return response.data
-//     }
-//   )
-  
-//   const userSlice = createSlice({
-//          name: 'user',
-//          initialState: {
-//            data: []
-//     },  reducer: {},
-//     extraReducers: {
-//         [getUsers.fulfilled] : (state, action) => {
-//             username = userName,
-//             passWord = userPassword
-//         },
-//         [getUsers.pending] : (state) => {
-//         },
-//         [getUsers.rejected] : (state) => {
-//         }
-//     }
-// });
+export const findUser = createAsyncThunk('Users', async (data) => {
+    console.log(data);
+    const response = fetch(`http://localhost:5000/login?userName=${data.username}&userPassword=${data.Password}`).then((res)=> {
+        return res.json();
+        
+    })
+    return response;
+}
+);
+const FindReducer = createSlice({
+    name: 'user',
+    initialState: {
+        logindata: [],
+        loading: false
+    },
+    reducer: {},
+    extraReducers:{
+        [findUser.pending]: (state, action) => {
+            state.loading = true;
+        },
+        [findUser.fulfilled]: (state, action) => {
+            state.signupdata = action.payload.data;
+            state.loading = false;
+        },
+        [findUser.rejected]: (state, action) => {
+        }
+    }
+});
 
+
+ 
+const FINDreducer = FindReducer.reducer;
+
+export default FINDreducer;
