@@ -2,6 +2,9 @@ import React from 'react'
 import {useDispatch } from "react-redux";
 import { newUser } from '../../Redux/SignupSlice';
 import './signup.css'
+import {Link} from "react-router-dom"
+import Login from '../Login/Login';
+
 
 function Signup() {
 
@@ -20,14 +23,19 @@ function Signup() {
   }
 
   return (
-    <form onSubmit={handlesignup}>
+    <div>
+      <form onSubmit={handlesignup}>
         <img src="../img/user.png" alt="" className='userimage'></img>
         <input type="text" placeholder='username' className='username'></input>
         <input type="email" placeholder='e-mail' className='email'></input>
         <input type="password" placeholder='password' className='password'></input>
         <button className="btn">Signup</button>
+        <button><Link to="/Login">login</Link></button>
         {/* <span>{error}</span> */}
     </form>
+    
+
+    </div>
     
   )
 }
