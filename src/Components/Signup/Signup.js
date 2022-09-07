@@ -9,17 +9,17 @@ import Login from '../Login/Login';
 function Signup() {
 
   const dispatch = useDispatch();
-  // const [error, seterror] = useState('');
-
   const handlesignup = (e) =>{
     const userName = e.target.elements[0].value;
-    const Email = e.target.elements[1].value;
-    const password = e.target.elements[2].value;
+    const userEmail = e.target.elements[1].value;
+    const userPassword = e.target.elements[2].value;
+    const userImage = e.target.elements[3].value;
     e.target.elements[0].value = "";
     e.target.elements[1].value = "";
     e.target.elements[2].value = "";
+    e.target.elements[3].value = "";
     e.preventDefault();
-    dispatch(newUser(userName,Email,password));
+    dispatch(newUser({userName,userEmail,userPassword,userImage}));
   }
 
   return (
@@ -29,16 +29,14 @@ function Signup() {
         <input type="text" placeholder='username' className='username'></input>
         <input type="email" placeholder='e-mail' className='email'></input>
         <input type="password" placeholder='password' className='password'></input>
+        <input type="text" accept="image/png, image/jpeg" className='image'></input>
         <button className="btn">Signup</button>
         <button><Link to="/Login">login</Link></button>
         {/* <span>{error}</span> */}
     </form>
-    
-
     </div>
     
   )
 }
-
 
 export default Signup

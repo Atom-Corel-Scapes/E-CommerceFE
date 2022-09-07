@@ -1,15 +1,15 @@
 import {createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-export const newUser = createAsyncThunk('Users', async () => {
+export const newUser = createAsyncThunk('Users', async (data) => {
         const response = fetch('http://localhost:5000/signup', {
             method: 'post',
             headers:{"Content-Type": "application/json"},
             body: JSON.stringify({
-                "userName":"vetri",
-                "userEmail":"kavin@gmail.com",
-                "userPassword":"12345",
-                "userImage":"https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?cs=srgb&dl=pexels-pixabay-36717.jpg&fm=jpg",
-                "userAdminStatus":"true"
+                "userName":data.userName,
+                "userEmail":data.userEmail,
+                "userPassword":data.userPassword,
+                "userImage":data.userImage,
+                "userAdminStatus":"false"
             })
         }).then((res)=> {
             return res.json();
