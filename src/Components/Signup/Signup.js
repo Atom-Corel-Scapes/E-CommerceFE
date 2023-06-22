@@ -4,6 +4,7 @@ import { newUser } from '../../Redux/SignupSlice';
 import './signup.css'
 import {Link} from "react-router-dom"
 import Login from '../Login/Login';
+import App from '../../App';
 
 
 function Signup() {
@@ -23,15 +24,17 @@ function Signup() {
   }
 
   return (
-    <div>
+    <div className='background'>
       <form onSubmit={handlesignup}>
+      <h1 className='topheading'>Signup</h1> 
         <img src="../img/user.png" alt="" className='userimage'></img>
         <input type="text" placeholder='username' className='username'></input>
         <input type="email" placeholder='e-mail' className='email'></input>
         <input type="password" placeholder='password' className='password'></input>
-        <input type="text" accept="image/png, image/jpeg" className='image'></input>
+        <input type="text" placeholder='imageurl' className='image'></input>
         <button className="btn">Signup</button>
         <button><Link to="/Login">login</Link></button>
+        <button className='Dbutton'><Link to="/display">Display</Link></button>
         {/* <span>{error}</span> */}
     </form>
     </div>

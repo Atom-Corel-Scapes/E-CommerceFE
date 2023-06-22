@@ -1,0 +1,106 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.background{
+    
+    background-color: #15172b;
+    border-radius:2px;
+    box-sizing: border-box;
+    height: 745px;
+    padding: 20px;
+    width:1535px;
+  }
+
+.topheading{
+    display: flex;
+    margin-top: 220px;
+    margin-left: 630px;
+    font-size: 40px;
+    color: rgb(71, 203, 23);
+    height: 30px;
+    width: 250px;
+    text-decoration-color: darkgreen;    
+  }
+
+.username{
+    
+    display: flex;
+    margin-top: 20px;
+    margin-left: 600px;
+    text-indent: 10px;
+    font-size: 15px;
+    height: 40px;
+    width: 300px;
+    border-radius: 10px;
+    background-color:seashell;
+    
+
+}
+
+.email{
+    display: flex;
+    text-indent: 10px;
+    margin: 20px;
+    margin-left: 600px;
+    font-size: 15px;
+    height: 40px;
+    width: 300px;
+    column-gap: 50px;
+    border-radius: 10px;
+    background-color:seashell;
+    
+}
+.password{
+    display:flex;
+    text-indent: 10px;
+    margin-left: 600px;
+    font-size: 15px;
+    height: 40px;
+    width: 300px;
+    column-gap: 20px;
+    border-radius: 10px;
+    background-color:seashell;
+    
+}
+
+.image {
+    display:flex;
+    text-indent: 10px;
+    margin-left: 600px;
+    font-size: 15px;
+    height: 40px;
+    width: 300px;
+    margin-top: 15px;
+    border-radius: 10px;
+    background-color:seashell;
+  }
+
+.btn{
+    margin-left: 680px;
+    border-radius: 5px;
+    background-color: #60e15c;
+    color: rgb(245, 248, 247);
+    height: 40px;
+    width: 100px;
+    margin-top:15px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+ .btn:after {
+    content: '»';
+ }
+ 
+.Dbutton{
+  text-decoration: none;
+  margin-left: 680px;
+  border-radius: 5px;
+  background-color: #60e15c;
+  color: rgb(245, 248, 247);
+  height: 40px;
+  width: 100px;
+  margin-top:15px;
+  font-size: 20px;
+  cursor: pointer;
+}
